@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import cors from "cors";
 import CryptoJS from 'crypto-js';
 import { rateLimit } from 'express-rate-limit'
+import helmet from 'helmet';
 
 config();
 
@@ -26,6 +27,17 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https:"],
+    },
+  },
+}));
 
 app.use(express.json());
 
