@@ -1,0 +1,27 @@
+{
+  "name": "api_fingerlock",
+  "version": "1.0.0",
+  "description": "api para hasear passwords",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch index.ts",
+    "start": "node index.js"
+  },
+  "author": "moises santos hernandez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/crypto-js": "^4.2.2",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0"
+  }
+}
